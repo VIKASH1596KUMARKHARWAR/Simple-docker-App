@@ -1,0 +1,16 @@
+vi .dockerignore
+ 
+ :qa!   \\   :wq
+
+
+docker build -t backend .  \\ thsi will be building our docker image
+
+docker images    \\ to check all the existing images
+
+
+docker run -p 3000:3000 backend   \\ run our container
+
+
+
+docker ps  \\ to check active container
+docker kill container_id   \\ to stop the running container
