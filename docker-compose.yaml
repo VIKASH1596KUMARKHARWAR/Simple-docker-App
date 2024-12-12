@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db  # Declare volume
+
+  mongo_app_15_2:
+    image: mongo_app_15_2
+    container_name: mongo_app_15_2
+    ports:
+      - "3000:3000"
+    environment:
+      MONGO_URL: "mongodb://mongo:27017/myDatabase"  # Use the service name 'mongodb'
+
+volumes:
+  mongodb_data:  # Declare the volume here
